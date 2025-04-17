@@ -1,0 +1,7 @@
+context: homelab
+contexts:
+    homelab:
+        endpoints: []
+        ca: 
+        crt: 
+        key: 
