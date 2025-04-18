@@ -15,6 +15,11 @@ spec:
         zfs-localpv:
           zfsNode:
               encrKeysDir: "/var/lib/openebs/keys"
+        mayastor:
+          csi:
+            node:
+              initContainers:
+                enabled: false
   destination:
     server: https://kubernetes.default.svc
     namespace: openebs
