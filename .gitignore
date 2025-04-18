@@ -4,3 +4,5 @@ talos/storage-worker.yaml
 talos/talosconfig
 */.env
 argo/charts
+applications/kube-prometheus-stack/admin-password
+applications/kube-prometheus-stack/admin-user

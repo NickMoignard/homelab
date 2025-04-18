@@ -1,17 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: minio
+  name: prometheus
   namespace: argo
 spec:
   project: default
   source:
-    repoURL: git@github.com:NickMoignard/homelab.git
-    path: applications/minio
-    targetRevision: HEAD
+    repoURL: https://prometheus-community.github.io/helm-charts
+    chart: kube-prometheus-stack
+    targetRevision: 27.10.0  # Use appropriate version
+    helm:
+      valueFiles:
+        - $applications/kube-prometheus-stack/values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: minio
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true
