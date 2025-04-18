@@ -10,13 +10,3 @@ helmCharts:
 
 resources:
 - namespace.yaml
-
-configMapGenerator:
-- name: argo-env
-  envs:
-  - .env
-
-secretGenerator:
-- name: example-secret-1
-  files:
-  - password.txt
