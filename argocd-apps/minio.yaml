@@ -9,7 +9,6 @@ spec:
     repoURL: git@github.com:NickMoignard/homelab.git
     path: minio
     targetRevision: HEAD
-    kustomize: {}
   destination:
     server: https://kubernetes.default.svc
     namespace: minio
