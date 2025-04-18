@@ -2,13 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: minio-operator
-  namespace: argocd
+  namespace: argo
 spec:
   project: default
   source:
     repoURL: https://operator.min.io/
     chart: operator
-    targetRevision: 4.5.8
+    targetRevision: 7.0.1
     helm:
       # Optional values override
       values: |
@@ -18,7 +18,7 @@ spec:
               value: "off"
   destination:
     server: https://kubernetes.default.svc
-    namespace: minio-operator
+    namespace: minio
   syncPolicy:
     automated:
       prune: true
