@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apps
+  namespace: argo
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:NickMoignard/homelab.git  # Your Git repo URL
+    path: argocd-apps  # Directory containing app definitions
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

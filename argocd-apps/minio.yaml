@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minio-operator
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://operator.min.io/
+    chart: operator
+    targetRevision: 4.5.8
+    helm:
+      # Optional values override
+      values: |
+        operator:
+          env:
+            - name: MINIO_CONSOLE_TLS_ENABLE
+              value: "off"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: minio-operator
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
