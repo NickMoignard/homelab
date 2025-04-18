@@ -11,11 +11,10 @@ spec:
     chart: openebs
     targetRevision: 4.1.0
     helm:
-      valuesFrom:
-        - kind: ConfigMap
-          namespace: openebs
-          name: openebs-values
-          valuesKey: values.yaml
+      values: |
+        ozfs-localpv:
+          zfsNode:
+              encrKeysDir: "/var/lib/openebs/keys"
   destination:
     server: https://kubernetes.default.svc
     namespace: openebs
