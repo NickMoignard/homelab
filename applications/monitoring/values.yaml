@@ -33,8 +33,8 @@ crds:
   ## It deploy a corresponding clusterrole, clusterrolebinding and serviceaccount to apply the CRDs.
   ## This feature is in preview, off by default and may change in the future.
   upgradeJob:
-    enabled: true
-    forceConflicts: true
+    enabled: false
+    forceConflicts: false
     image:
       busybox:
         registry: docker.io
