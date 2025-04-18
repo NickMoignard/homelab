@@ -16,7 +16,7 @@ kubeVersionOverride: ""
 
 ## Provide a name to substitute for the full names of resources
 ##
-fullnameOverride: prometheus
+fullnameOverride: ""
 
 ## Labels to apply to all resources
 ##
@@ -33,8 +33,8 @@ crds:
   ## It deploy a corresponding clusterrole, clusterrolebinding and serviceaccount to apply the CRDs.
   ## This feature is in preview, off by default and may change in the future.
   upgradeJob:
-    enabled: false
-    forceConflicts: false
+    enabled: true
+    forceConflicts: true
     image:
       busybox:
         registry: docker.io
@@ -387,8 +387,6 @@ alertmanager:
   ## Deploy alertmanager
   ##
   enabled: true
-
-  fullnameOverride: alertmanager
 
   # Optional: Override the namespace where Alertmanager will be deployed.
   namespaceOverride: ""
@@ -1215,7 +1213,6 @@ alertmanager:
 grafana:
   enabled: true
   namespaceOverride: ""
-  fullnameOverride: grafana
 
   ## ForceDeployDatasources Create datasource configmap even if grafana deployment has been disabled
   ##
@@ -2560,7 +2557,7 @@ prometheusOperator:
   enabled: true
 
   ## Use '{{ template "kube-prometheus-stack.fullname" . }}-operator' by default
-  fullnameOverride: prometheus-operator
+  fullnameOverride: ""
 
   ## Number of old replicasets to retain ##
   ## The default value is 10, 0 will garbage-collect old replicasets ##
