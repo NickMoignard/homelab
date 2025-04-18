@@ -1,4 +1,4 @@
-# homelab
+# Kubernetes Homelab
 
 This is a mono repository for my homelab setup. It is a work in progress and will be updated as I add more nodes, services and features. I use kubernetes at work and much prefer to it over Proxmox or other hypervisors for managing workloads. Primarily because of the ease of scaling and managing complex deployments with Operators & Helm Charts.
 
@@ -150,6 +150,8 @@ You will be prompted to enter the admin password. The password will be initially
   kubectl get secret argocd-initial-admin-secret -n argo -o jsonpath='{.data.password}' | base64 --decode; echo
 ```
 
+<img width="1478" alt="ArgoCD UI" src="https://github.com/user-attachments/assets/2e4fdc20-1aec-48ef-9963-7cf2eb5e4508" />
+
 4. Deploy App of Apps to ArgoCD & Sync child applications
 ```bash
   argocd app create apps \
@@ -166,4 +168,8 @@ You will be prompted to enter the admin password. The password will be initially
 ```
 
 Now to deploy any new applications or make changes to existing applications, you can simply update the `kustomization.yaml` file in the appropriate directory and ArgoCD will automatically detect the changes and deploy them to the cluster.
+
+<img width="1477" alt="App of Apps Application DAG" src="https://github.com/user-attachments/assets/38aad007-171c-46f9-836c-569d3e867cb3" />
+
+<img width="1482" alt="Minio Operator Application DAG" src="https://github.com/user-attachments/assets/8a68831e-1c2f-437d-80a7-1f25b77c09a9" />
 
