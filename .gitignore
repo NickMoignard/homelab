@@ -2,3 +2,4 @@ talos/controlplane.yaml
 talos/worker.yaml
 talos/storage-worker.yaml
 talos/talosconfig
+*/.env
