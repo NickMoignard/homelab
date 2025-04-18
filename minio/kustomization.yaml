@@ -6,6 +6,6 @@ resources:
 - namespace.yaml
 
 configMapGenerator:
-- name: argo-env
-  envs:
-  - .env
+- name: example-properties
+  files:
+    - example.properties
