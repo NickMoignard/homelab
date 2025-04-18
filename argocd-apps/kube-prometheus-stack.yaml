@@ -10,8 +10,11 @@ spec:
     chart: kube-prometheus-stack
     targetRevision: 70.7.0
     helm:
-      valueFiles:
-        - $applications/kube-prometheus-stack/values.yaml
+      valuesFrom:
+        - kind: ConfigMap
+          namespace: monitoring
+          name: prometheus-values
+          valuesKey: values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
