@@ -14,11 +14,23 @@ I acquired multiple second-hand workstation pc's which have been upgraded with o
 
 ### OS
 
-Each server has [**Talos Linux**](https://github.com/siderolabs/talos) installed. A lightweight Linux distribution designed for Kubernetes and other cloud-native workloads.
+#### Talos Linux
 
-It is used as the base operating system for all nodes in the homelab.
+Each server has [**Talos Linux**](https://github.com/siderolabs/talos) installed. A lightweight Linux distribution designed for cloud-native workloads, specifically Kubernetes.
 
-Talos is purpose built for running kubernetes on bare metal. It is designed to be managed via a declarative API (`talosctl`), contains all the required packages for running kubernetes. It is also very easy to install and configure, and has a great community behind it.
+Talos is purpose built for running kubernetes on bare metal. Very easy to install, configure, and has a great community behind it. It is designed to be managed via a declarative API (`talosctl`) and contains all the required packages for running kubernetes.
+
+## Requirements
+
+- Bootable USB drive or other installation media for Talos Linux
+  - [Ventoy](https://www.ventoy.net/en/index.html) is a great tool for this. Can install multiple ISO images on a single USB drive and choose which one to boot from.
+  - Talos Linux ISO images can be built from source or downloaded from [Github releases](https://github.com/siderolabs/talos/releases).
+- A separate machine on the same network as the target nodes with the following installed:
+  - `talosctl`
+  - `kubectl`
+  - `kustomize`
+  - `argocd`
+  - `helm`
 
 ## Kubernetes Cluster
 
@@ -29,13 +41,6 @@ As these config files contain sensitive information, they are not stored in the 
 ### Cluster Setup
 
 [Talos Linux Getting Started Guide](https://www.talos.dev/v1.9/introduction/getting-started/)
-
-#### Requirements
-
-- Bootable USB drive or other installation media for Talos Linux
-  - [Ventoy](https://www.ventoy.net/en/index.html) is a great tool for this. Can install multiple ISO images on a single USB drive and choose which one to boot from.
-  - Talos Linux ISO images can be built from source or downloaded from [Github releases](https://github.com/siderolabs/talos/releases).
-- A separate machine with `talosctl` & `kubectl` installed (On the same network as the target nodes)
 
 #### Control Plane Node Setup
 
