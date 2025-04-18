@@ -3,3 +3,4 @@ talos/worker.yaml
 talos/storage-worker.yaml
 talos/talosconfig
 */.env
+argo/charts
