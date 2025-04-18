@@ -1,0 +1,27 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  namespace: argo
+spec:
+  project: default
+  source:
+    repoURL: https://openebs.github.io/openebs
+    chart: openebs
+    targetRevision: 4.1.0
+    helm:
+      valuesFrom:
+        - kind: ConfigMap
+          namespace: openebs
+          name: openebs-values
+          valuesKey: values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openebs
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
