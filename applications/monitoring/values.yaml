@@ -1,6 +1,6 @@
 ## Provide a name in place of kube-prometheus-stack for `app:` labels
 ##
-nameOverride: prometheus
+nameOverride: ""
 
 ## Override the deployment namespace
 ##
@@ -16,7 +16,7 @@ kubeVersionOverride: ""
 
 ## Provide a name to substitute for the full names of resources
 ##
-fullnameOverride: ""
+fullnameOverride: prometheus
 
 ## Labels to apply to all resources
 ##
@@ -387,6 +387,8 @@ alertmanager:
   ## Deploy alertmanager
   ##
   enabled: true
+
+  fullnameOverride: alertmanager
 
   # Optional: Override the namespace where Alertmanager will be deployed.
   namespaceOverride: ""
@@ -1213,6 +1215,7 @@ alertmanager:
 grafana:
   enabled: true
   namespaceOverride: ""
+  fullnameOverride: grafana
 
   ## ForceDeployDatasources Create datasource configmap even if grafana deployment has been disabled
   ##
@@ -2557,7 +2560,7 @@ prometheusOperator:
   enabled: true
 
   ## Use '{{ template "kube-prometheus-stack.fullname" . }}-operator' by default
-  fullnameOverride: ""
+  fullnameOverride: prometheus-operator
 
   ## Number of old replicasets to retain ##
   ## The default value is 10, 0 will garbage-collect old replicasets ##
