@@ -11,6 +11,10 @@ I acquired multiple second-hand workstation pc's which have been upgraded with o
 - 1 Old workstation is running as a **Kubernetes storage worker** node.
 - 1 Old Gaming PC with a nvidea GTX 1080 graphics card is running as a **Kubernetes compute / storage worker** node. 
   - This will be used to assist with machine learning workloads.
+ 
+<img width="700" alt="Screenshot 2025-04-18 at 9 50 51 pm" src="https://github.com/user-attachments/assets/dc722568-2f85-440b-a1ff-8897db71f5c0" />
+
+<img width="700" alt="Screenshot 2025-04-18 at 9 50 29 pm" src="https://github.com/user-attachments/assets/e2d83a2e-c347-4364-9ea6-d2af872a0532" />
 
 ### OS
 
