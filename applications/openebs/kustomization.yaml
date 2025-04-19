@@ -4,10 +4,6 @@ namespace: openebs
 
 resources:
 - namespace.yaml
-- old-pc-hdd-pool.yaml
-- old-pc-ssd-pool.yaml
-- storage-worker-hdd-pool.yaml
-- storage-worker-ssd-pool.yaml
 
 configMapGenerator:
 - name: openebs-values
