@@ -1,8 +1,0 @@
-apiVersion: "openebs.io/v1alpha1"
-kind: MayastorPool
-metadata:
-  name: storage-worker-hdd-pool  # Use a unique name for each node
-  namespace: openebs
-spec:
-  node: talos-dvd-2lj  # The node's name as shown in kubectl get nodes
-  disks: ["/dev/sdb"]  # The disk path on this specific node
