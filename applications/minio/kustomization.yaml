@@ -4,6 +4,7 @@ namespace: minio
 
 resources:
 - namespace.yaml
+- pvc.yaml
 
 configMapGenerator:
 - name: example-properties
