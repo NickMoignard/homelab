@@ -10,11 +10,13 @@ spec:
     chart: kube-prometheus-stack
     targetRevision: 70.7.0
     helm:
-      valuesFrom:
-        - kind: ConfigMap
-          namespace: monitoring
-          name: prometheus-values
-          valuesKey: values.yaml
+      values: |
+        fullnameOverride: prometheus
+        alertmanager:
+          fullnameOverride: alertmanager
+        grafana:
+          fullnameOverride: grafana
+          
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
