@@ -1,28 +1,13 @@
-# kind: PersistentVolumeClaim
-# apiVersion: v1
-# metadata:
-#   name: minio-pvc
-#   namespace: minio
-#   annotations:
-#     - kubernetes.io/hostname: talos-dvd-2lj
-# spec:
-#   storageClassName: openebs-hostpath
-#   accessModes: ["ReadWriteOnce"]
-#   resources:
-#     requests:
-#       #Set capacity here
-#       storage: 2000Gi
-
-
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: localpv-vol
+  name: minio-pvc
+  namespace: minio
+  annotations:
+    kubernetes.io/hostname: talos-dvd-2lj
 spec:
-  #Change this name if you are using a custom StorageClass
   storageClassName: openebs-hostpath
   accessModes: ["ReadWriteOnce"]
   resources:
     requests:
-      #Set capacity here
-      storage: 5Gi
+      storage: 2000Gi
