@@ -12,7 +12,7 @@ spec:
     helm:
       # Optional values override
       values: |
-        mode: "standalone"
+        mode: standalone
         operator:
           env:
             - name: MINIO_CONSOLE_TLS_ENABLE
