@@ -1,0 +1,6 @@
+machine:
+  nodeLabels:
+    nodeName: "i3-4GB-dell"
+    type: "storage"
+    storageType: "distributed"
+    gpu: "false"
