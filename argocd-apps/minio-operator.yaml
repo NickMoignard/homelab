@@ -16,6 +16,16 @@ spec:
           env:
             - name: MINIO_CONSOLE_TLS_ENABLE
               value: "off"
+        persistence:
+          enabled: true
+          existingClaim: minio-pvc
+        replicas: 1
+        drivesPerNode: 1
+        pools: 1
+        rootUser: minioadmin
+        rootPassword: minioadmin
+
+
   destination:
     server: https://kubernetes.default.svc
     namespace: minio

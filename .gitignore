@@ -5,3 +5,4 @@ talos/talosconfig
 */.env
 argo/charts
 secrets/prometheus/*
+secrets/minio/*
